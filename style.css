@@ -1,0 +1,479 @@
+:root {
+    color-scheme: dark;
+    color: #f4f1ec;
+    background: #050505;
+    font-family: "Science Gothic", sans-serif;
+    --surface: rgba(14, 14, 14, 0.95);
+    --surface-strong: rgba(10, 10, 10, 0.98);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+    background: #050505;
+    color: #ece6dd;
+    animation: pageTransition 1.2s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+body::selection {
+    background: #d6b37e;
+    color: #111;
+}
+
+@keyframes pageTransition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 32px;
+    background: rgba(2, 2, 2, 0.7);
+    backdrop-filter: blur(14px);
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #ece6dd;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #d6b37e;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ece6dd;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.brand img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.hero,
+.about-hero,
+.contact-hero {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 96px 20px 60px;
+    color: #fff;
+}
+
+.hero {
+    background-image: url("img/white-tiger-bengal-tiger-black.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero {
+    background-image: url("img/Gemini_Generated_Image_u2v3qu2v3qu2v3qu copy.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero {
+    background-image: url("img/planet-earth-dark-5120x2880-26342.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay,
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.24));
+    z-index: 0;
+}
+
+.hero-panel,
+.about-hero-panel,
+.contact-hero-panel {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    width: 100%;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.8rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+    font-family: 'Martian Mono', monospace;
+}
+
+.hero-panel h1,
+.about-hero-panel h1,
+.contact-hero-panel h1 {
+    font-size: clamp(2.4rem, 4vw, 4.4rem);
+    line-height: 1.05;
+    margin: 0 0 1rem;
+}
+
+.hero-copy,
+.contact-hero-panel p,
+.feature p,
+.about-copy p,
+.card p,
+.skill-card p,
+.contact-panel p {
+    font-family: 'Martian Mono', monospace;
+}
+
+.hero-copy {
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.8rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #f5f1e8;
+    color: #111;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-tertiary {
+    background: transparent;
+    color: #f5f1e8;
+    border: 1px solid rgba(245, 241, 232, 0.18);
+}
+
+.highlights {
+    display: grid;
+    background-color: black;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 80px 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 32px;
+    color: #f8f8f8;
+    backdrop-filter: blur(10px);
+}
+
+.card h2,
+.skill-card h3 {
+    margin-top: 0;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+}
+
+.card p {
+    line-height: 1.8;
+    opacity: 0.92;
+}
+
+.feature {
+    padding: 80px 20px;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.96));
+    color: #fff;
+    text-align: center;
+}
+
+.feature h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    max-width: 720px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+.contact {
+    padding: 80px 20px;
+    background: #111;
+    color: #f5f1e8;
+    text-align: center;
+}
+
+.contact-panel {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.contact-panel h2 {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-panel p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+.about-copy h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-copy p {
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+}
+
+.about-skills {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.skill-card p {
+    line-height: 1.8;
+    color: #dcd4cb;
+}
+
+.contact-form-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+.contact-form-card,
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 36px;
+    color: #f8f8f8;
+    backdrop-filter: blur(12px);
+}
+
+.contact-form-card h2,
+.contact-info-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-form-card p {
+    opacity: 0.9;
+    margin-bottom: 1.8rem;
+}
+
+.contact-form-card label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8f8f8;
+    margin-bottom: 18px;
+    outline: none;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    border-color: #d6b37e;
+    box-shadow: 0 0 0 4px rgba(214, 179, 126, 0.12);
+}
+
+.contact-form-card textarea {
+    resize: vertical;
+}
+
+.contact-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info-card li {
+    margin-bottom: 1rem;
+}
+
+.contact-info-card a {
+    color: #f5f1e8;
+}
+
+footer {
+    text-align: center;
+    padding: 24px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #f2f2f2;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 18px 24px;
+    }
+
+    .highlights,
+    .about-details,
+    .contact-form-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .about-hero,
+    .contact-hero {
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 15px;
+    }
+
+    header {
+        padding: 16px 18px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .hero-copy {
+        font-size: 1rem;
+    }
+
+    .hero-buttons,
+    .contact-form-section {
+        gap: 14px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .feature,
+    .contact,
+    .contact-form-section,
+    .about-details {
+        padding: 60px 16px;
+    }
+}
